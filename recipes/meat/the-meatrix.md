@@ -2,7 +2,7 @@
 Authors Andrew Sabot and Moofius
 
 ## Description
-Do you want to take the red pill or the blue pill? Don't let corperate greed ruin meat!
+Do you want to take the red pill or the blue pill? Don't let corporate greed ruin meat!
 Ready in 6 and a half hours!
 For more info check out http://allrecipes.com/recipe/222678/meat-gravy/?internalSource=staff%20pick&referringId=565&referringContentType=recipe%20hub
 
