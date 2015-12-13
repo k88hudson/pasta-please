@@ -27,14 +27,6 @@ function getRandomRecipe(options) {
     var veggieRecipes = files.concat(getFileNames('../recipes/veggie'));
     var veganRecipes = files.concat(getFileNames('../recipes/vegan'));
     
-    var help = "\nUsage: pasta-please --<option>\n\n";
-    help = help + "Where <option> is one of:\n";
-    help = help + "  meat, veggie, vegan\n\n";
-    help = help + "pasta-please --meat      # Returns a meat recipe\n";
-    help = help + "pasta-please --veggie    # Returns a veggie recipe\n";
-    help = help + "pasta-please --vegan     # Returns a vegan recipe\n\n";
-    help = help + "Note: if no option is provided, a random recipe will be returned";
-    
     if (options.meat) {
         files = meatRecipes;
         recipeType = "Meat";
@@ -69,11 +61,28 @@ function getRandomRecipe(options) {
     const result = htmlToText.fromString(markdown.makeHtml(text));
 
     if (options.help) {
-        console.log(help);
+        console.log(help());
     }
     else {
         console.log(LINE + '*** '.yellow + recipeType.yellow + ' recipe ***\n\n'.yellow + result + '\n\nEnjoy!'.yellow + LINE);
     }
+}
+
+function help() {
+  return [
+    '',
+    'Usage: pasta-please [--option]',
+    '',
+    'Where option is one of:',
+    '  meat, veggie, vegan',
+    '',
+    'Examples:',
+    '  pasta-please --meat      # Returns a meat recipe',
+    '  pasta-please --veggie    # Returns a veggie recipe',
+    '  pasta-please --vegan     # Returns a vegan recipe',
+    '',
+    'Note: if no option is provided, a random recipe will be returned'
+  ].join('\n');
 }
 
 getRandomRecipe(args);
